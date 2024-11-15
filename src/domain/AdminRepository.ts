@@ -16,7 +16,7 @@ export class AdminRepository implements IAdminRepository{
         const isPasswordMatch =  await bcrypt.compare(password,adminData.password);
         if(!isPasswordMatch){
             console.log("passord is incorrrect");
-            return { success: false, message: "Login unsuccesfull" }
+            return { success: false, message: "Incorrect Credentials" }
             
         } else {
             console.log("Login succesful")
