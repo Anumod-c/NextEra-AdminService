@@ -10,7 +10,9 @@ const config={
 
     DATABASE_URL :process.env.DATABASE_URL || 'mongodb://0.0.0.0:27017/NextEra-AdminService',
 
-    JWT_SECRET: 'nextera@123'
+    JWT_SECRET: 'nextera@123',
+
+    grpcPort:process.env.grpcPort,
 }
 
 export default config

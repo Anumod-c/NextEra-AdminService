@@ -2,8 +2,8 @@ import mongoose,{Document,Types,Schema} from "mongoose";
 
 import { IAdmin } from "../domain/entities/IAdmin";
 
-export interface IAdminDocument extends IAdmin,Document {
-    _id:Types.ObjectId;
+export interface IAdminDocument extends Omit<IAdmin, '_id'>,Document{_id:mongoose.Types.ObjectId} {
+    
 }
 
 
@@ -18,18 +18,12 @@ const adminSchema :Schema = new Schema({
         required:true,
         unique:true
     },
-    phone:{
-        type: Number,
-    },
+   
     password:{
         type: String,
         required: true
     },
-    created_at:{
-        type:Date,
-        required:true,
-        default:Date.now
-    }
+
 })
 
 
